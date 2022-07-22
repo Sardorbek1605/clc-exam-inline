@@ -39,22 +39,6 @@ def setup_dispatcher(dp):
     dp.add_handler(CommandHandler("stats", admin_handlers.stats))
     dp.add_handler(CommandHandler('export_users', admin_handlers.export_users))
 
-    # dp.add_handler(MessageHandler(Filters.text(
-    #     onboarding_static_text.EXAM_TITLE), exam_handler.exam_start))
-    #
-    # dp.add_handler(MessageHandler(Filters.text(
-    #     onboarding_static_text.BATTLE_TITLE), exam_handler.liderboard))
-
-    # EXAM HANDLERS
-    # dp.add_handler(CallbackQueryHandler(
-    #     exam_handler.exam_callback, pattern=r"exam-start-"))
-    # dp.add_handler(CallbackQueryHandler(
-    #     exam_handler.exam_confirmation, pattern=r"exam-confirmation-"))
-    #
-    # dp.add_handler(PollHandler(exam_handler.poll_handler,
-    #                pass_chat_data=True, pass_user_data=True))
-    # handling errors
-
     dp.add_handler(InlineQueryHandler(onboarding_handlers.inlinequery))
     dp.add_error_handler(error.send_stacktrace_to_tg_chat)
 
