@@ -40,7 +40,7 @@ def inlinequery(update: Update, context: CallbackContext) -> None:
                 id=str(uuid4()),
                 title=p.title,
                 thumb_url=p.img_url,
-                input_message_content=InputTextMessageContent(query.upper()),
+                input_message_content=InputTextMessageContent(p.content),
             )
         )
 
